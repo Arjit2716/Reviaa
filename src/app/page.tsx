@@ -64,9 +64,9 @@ export default function Home() {
                     key={category.id}
                     variant={selectedCategory === category.name ? "secondary" : "ghost"}
                     onClick={() => setSelectedCategory(category.name)}
-                    className="flex flex-col items-center h-24 w-24 p-4 rounded-lg"
+                    className="flex flex-col items-center h-28 w-28 p-4 rounded-lg"
                   >
-                    <category.icon className="w-8 h-8 mb-2 text-primary" />
+                    <category.icon className="w-10 h-10 mb-2 text-primary" />
                     <span className="text-sm font-medium">{category.name}</span>
                   </Button>
                 ))}
