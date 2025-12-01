@@ -12,20 +12,6 @@ export function Footer() {
               Reviaa
             </span>
           </div>
-          <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
-            <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link href="/upload" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Upload
-            </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms & Conditions
-            </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Contact Us
-            </Link>
-          </nav>
           <div className="flex items-center gap-4">
             <Link href="#" aria-label="Twitter">
               <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary transition-colors" />
