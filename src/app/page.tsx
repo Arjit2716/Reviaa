@@ -34,8 +34,6 @@ export default function Home() {
     ? clothingItems 
     : clothingItems.filter(item => item.category.replace(" ", "-").toLowerCase().includes(selectedCategory.toLowerCase()));
   
-  const newArrivals = clothingItems.slice(0, 4);
-
 
   return (
     <div className="space-y-16">
@@ -153,39 +151,6 @@ export default function Home() {
             <h3 className="font-headline text-xl font-semibold mb-2">3. Easy Return</h3>
             <p className="text-muted-foreground">Simply place the item in the pre-paid return bag and drop it off. We handle the dry cleaning!</p>
           </div>
-        </div>
-      </section>
-
-      <Separator />
-      
-      <section>
-        <h2 className="text-2xl font-headline font-semibold mb-6">New Arrivals</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {newArrivals.map((item) => {
-             const image = getImage(item.imageId);
-             return (
-              <Card key={item.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 rounded-lg">
-                <Link href={`/item/${item.id}`} className="block">
-                  <CardHeader className="p-0 relative">
-                    {image && (
-                       <Image
-                        src={image.imageUrl}
-                        alt={item.name}
-                        width={400}
-                        height={500}
-                        className="w-full h-80 object-cover object-top"
-                        data-ai-hint={image.imageHint}
-                      />
-                    )}
-                  </CardHeader>
-                  <CardContent className="p-4">
-                    <CardTitle className="font-headline text-lg mb-1 truncate group-hover:text-primary">{item.name}</CardTitle>
-                    <p className="text-lg font-bold text-primary">${item.pricePerDay}<span className="text-sm font-normal text-muted-foreground">/day</span></p>
-                  </CardContent>
-                </Link>
-              </Card>
-             );
-          })}
         </div>
       </section>
 
