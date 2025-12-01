@@ -1,3 +1,52 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "item1",
+      "description": "Elegant floral maxi dress",
+      "imageUrl": "https://images.unsplash.com/photo-1517970640957-23d07d5ed08c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxmbG9yYWwlMjBkcmVzc3xlbnwwfHx8fDE3NjQ2MTM2NzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "floral dress"
+    },
+    {
+      "id": "item2",
+      "description": "Classic leather biker jacket",
+      "imageUrl": "https://images.unsplash.com/photo-1578198576866-7e0ba6078128?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxsZWF0aGVyJTIwamFja2V0fGVufDB8fHx8MTc2NDUzMzMwNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "leather jacket"
+    },
+    {
+      "id": "item3",
+      "description": "Traditional silk saree with embroidery",
+      "imageUrl": "https://images.unsplash.com/photo-1614881064213-180b1c28f743?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2lsayUyMHNhcmVlfGVufDB8fHx8MTc2NDYxMzY3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "silk saree"
+    },
+    {
+      "id": "item4",
+      "description": "Sharp two-piece business suit",
+      "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHN1aXR8ZW58MHx8fHwxNzY0NjEzNjcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "business suit"
+    },
+    {
+      "id": "item5",
+      "description": "Cozy knit sweater",
+      "imageUrl": "https://images.unsplash.com/photo-1646270968322-51cbdeaa6cde?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxrbml0JTIwc3dlYXRlcnxlbnwwfHx8fDE3NjQ1NjM3MTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "knit sweater"
+    },
+    {
+      "id": "item6",
+      "description": "Sparkling cocktail party dress",
+      "imageUrl": "https://images.unsplash.com/photo-1705626313801-3f514863ca83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwYXJ0eSUyMGRyZXNzfGVufDB8fHx8MTc2NDYwOTM1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "party dress"
+    },
+    {
+      "id": "item7",
+      "description": "Comfortable denim jeans",
+      "imageUrl": "https://images.unsplash.com/photo-1604176354204-9268737828e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkZW5pbSUyMGplYW5zfGVufDB8fHx8MTc2NDU2NTE0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "denim jeans"
+    },
+    {
+      "id": "item8",
+      "description": "Formal evening gown",
+      "imageUrl": "https://images.unsplash.com/photo-1710023209229-ec9877bbb95b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxldmVuaW5nJTIwZ293bnxlbnwwfHx8fDE3NjQ1MjM3Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "evening gown"
+    }
+  ]
 }
