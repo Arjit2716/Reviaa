@@ -15,7 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ChevronDown, ArrowRight } from "lucide-react";
+import { ChevronDown, ArrowRight, Search, HandHeart, Repeat } from "lucide-react";
 
 
 export default function Home() {
@@ -33,10 +33,12 @@ export default function Home() {
   const filteredItems = selectedCategory === "All" 
     ? clothingItems 
     : clothingItems.filter(item => item.category.replace(" ", "-").toLowerCase().includes(selectedCategory.toLowerCase()));
+  
+  const newArrivals = clothingItems.slice(0, 4);
 
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <section className="text-center">
         <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-tight">
           Reviaa
@@ -45,8 +47,6 @@ export default function Home() {
           Discover unique fashion and rent the perfect outfit for any occasion. Your closet is now endless.
         </p>
       </section>
-
-      <Separator />
 
       <section>
         <Accordion type="single" collapsible className="w-full" defaultValue="categories">
@@ -75,8 +75,6 @@ export default function Home() {
           </AccordionItem>
         </Accordion>
       </section>
-
-      <Separator />
 
       <section>
         <div className="flex justify-between items-center mb-6">
@@ -128,6 +126,69 @@ export default function Home() {
             </div>
         )}
       </section>
+
+      <Separator />
+
+       <section>
+        <h2 className="text-2xl font-headline font-semibold text-center mb-8">How It Works</h2>
+        <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+              <Search className="w-8 h-8" />
+            </div>
+            <h3 className="font-headline text-xl font-semibold mb-2">1. Browse & Select</h3>
+            <p className="text-muted-foreground">Explore our curated collection and find the perfect outfit for your next event.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+              <HandHeart className="w-8 h-8" />
+            </div>
+            <h3 className="font-headline text-xl font-semibold mb-2">2. Rent & Enjoy</h3>
+            <p className="text-muted-foreground">Book your item for your desired dates. Wear it, love it, and make a statement.</p>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-4">
+              <Repeat className="w-8 h-8" />
+            </div>
+            <h3 className="font-headline text-xl font-semibold mb-2">3. Easy Return</h3>
+            <p className="text-muted-foreground">Simply place the item in the pre-paid return bag and drop it off. We handle the dry cleaning!</p>
+          </div>
+        </div>
+      </section>
+
+      <Separator />
+      
+      <section>
+        <h2 className="text-2xl font-headline font-semibold mb-6">New Arrivals</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {newArrivals.map((item) => {
+             const image = getImage(item.imageId);
+             return (
+              <Card key={item.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 rounded-lg">
+                <Link href={`/item/${item.id}`} className="block">
+                  <CardHeader className="p-0 relative">
+                    {image && (
+                       <Image
+                        src={image.imageUrl}
+                        alt={item.name}
+                        width={400}
+                        height={500}
+                        className="w-full h-80 object-cover object-top"
+                        data-ai-hint={image.imageHint}
+                      />
+                    )}
+                  </CardHeader>
+                  <CardContent className="p-4">
+                    <CardTitle className="font-headline text-lg mb-1 truncate group-hover:text-primary">{item.name}</CardTitle>
+                    <p className="text-lg font-bold text-primary">${item.pricePerDay}<span className="text-sm font-normal text-muted-foreground">/day</span></p>
+                  </CardContent>
+                </Link>
+              </Card>
+             );
+          })}
+        </div>
+      </section>
+
     </div>
   );
 }
