@@ -15,7 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 
 export default function Home() {
@@ -79,16 +79,23 @@ export default function Home() {
       <Separator />
 
       <section>
-        <h2 className="text-2xl font-headline font-semibold mb-6 text-center">
-            {selectedCategory === "All" ? "Available Near You" : `Browsing: ${selectedCategory}`}
-        </h2>
+        <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-headline font-semibold">
+                {selectedCategory === "All" ? "Featured Items" : `Browsing: ${selectedCategory}`}
+            </h2>
+            {selectedCategory !== "All" && (
+                 <Button variant="link" onClick={() => setSelectedCategory("All")}>
+                    View All <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+            )}
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredItems.map((item) => {
             const image = getImage(item.imageId);
             return (
-              <Card key={item.id} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+              <Card key={item.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 rounded-lg">
                 <Link href={`/item/${item.id}`} className="block">
-                  <CardHeader className="p-0">
+                  <CardHeader className="p-0 relative">
                     {image && (
                        <Image
                         src={image.imageUrl}
@@ -99,14 +106,15 @@ export default function Home() {
                         data-ai-hint={image.imageHint}
                       />
                     )}
+                    <Badge variant="secondary" className="absolute top-2 right-2">{item.size}</Badge>
                   </CardHeader>
                   <CardContent className="p-4">
-                    <CardTitle className="font-headline text-lg mb-2 truncate group-hover:text-primary">{item.name}</CardTitle>
+                    <CardTitle className="font-headline text-lg mb-1 truncate group-hover:text-primary">{item.name}</CardTitle>
                     <p className="text-sm text-muted-foreground line-clamp-2">{item.description}</p>
                   </CardContent>
                   <CardFooter className="flex justify-between items-center p-4 pt-0">
                     <p className="text-lg font-bold text-primary">${item.pricePerDay}<span className="text-sm font-normal text-muted-foreground">/day</span></p>
-                    <Badge variant="secondary">{item.size}</Badge>
+                    <Button size="sm" variant="outline">View Details</Button>
                   </CardFooter>
                 </Link>
               </Card>
@@ -114,7 +122,10 @@ export default function Home() {
           })}
         </div>
         {filteredItems.length === 0 && (
-            <p className="text-center text-muted-foreground mt-8">No items found in this category.</p>
+            <div className="text-center text-muted-foreground mt-8 py-10 border-2 border-dashed rounded-lg">
+              <p className="mb-2">No items found in this category.</p>
+              <Button onClick={() => setSelectedCategory("All")}>Back to all items</Button>
+            </div>
         )}
       </section>
     </div>

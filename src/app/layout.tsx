@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Reviaa',
