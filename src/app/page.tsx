@@ -6,6 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Badge } from "@/components/ui/badge";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import { ChevronDown } from "lucide-react";
+
 
 export default function Home() {
   const getImage = (id: string) => {
@@ -26,19 +34,30 @@ export default function Home() {
       <Separator />
 
       <section>
-        <h2 className="text-2xl font-headline font-semibold mb-6 text-center">Browse by Category</h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              variant="ghost"
-              className="flex flex-col items-center h-24 w-24 p-4 rounded-lg hover:bg-secondary"
-            >
-              <category.icon className="w-8 h-8 mb-2 text-primary" />
-              <span className="text-sm font-medium">{category.name}</span>
-            </Button>
-          ))}
-        </div>
+        <Accordion type="single" collapsible className="w-full" defaultValue="categories">
+          <AccordionItem value="categories">
+            <AccordionTrigger className="text-2xl font-headline font-semibold mb-2 text-center hover:no-underline justify-center">
+              <div className="flex items-center gap-2">
+                Browse by Category
+                <ChevronDown className="h-6 w-6 shrink-0 transition-transform duration-200" />
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              <div className="flex flex-wrap justify-center gap-4 pt-4">
+                {categories.map((category) => (
+                  <Button
+                    key={category.id}
+                    variant="ghost"
+                    className="flex flex-col items-center h-24 w-24 p-4 rounded-lg hover:bg-secondary"
+                  >
+                    <category.icon className="w-8 h-8 mb-2 text-primary" />
+                    <span className="text-sm font-medium">{category.name}</span>
+                  </Button>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
 
       <Separator />
