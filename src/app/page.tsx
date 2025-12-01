@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { clothingItems, categories } from "@/lib/data";
@@ -16,9 +19,21 @@ import { ChevronDown } from "lucide-react";
 
 
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
   const getImage = (id: string) => {
     return PlaceHolderImages.find(img => img.id === id);
   }
+  
+  const getCategoryNameFromId = (id: string) => {
+    const category = categories.find(c => c.id === id);
+    return category ? category.name : "All";
+  }
+
+  const filteredItems = selectedCategory === "All" 
+    ? clothingItems 
+    : clothingItems.filter(item => item.category.replace(" ", "-").toLowerCase().includes(selectedCategory.toLowerCase()));
+
 
   return (
     <div className="space-y-12">
@@ -47,8 +62,9 @@ export default function Home() {
                 {categories.map((category) => (
                   <Button
                     key={category.id}
-                    variant="ghost"
-                    className="flex flex-col items-center h-24 w-24 p-4 rounded-lg hover:bg-secondary"
+                    variant={selectedCategory === category.name ? "secondary" : "ghost"}
+                    onClick={() => setSelectedCategory(category.name)}
+                    className="flex flex-col items-center h-24 w-24 p-4 rounded-lg"
                   >
                     <category.icon className="w-8 h-8 mb-2 text-primary" />
                     <span className="text-sm font-medium">{category.name}</span>
@@ -63,9 +79,11 @@ export default function Home() {
       <Separator />
 
       <section>
-        <h2 className="text-2xl font-headline font-semibold mb-6 text-center">Available Near You</h2>
+        <h2 className="text-2xl font-headline font-semibold mb-6 text-center">
+            {selectedCategory === "All" ? "Available Near You" : `Browsing: ${selectedCategory}`}
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {clothingItems.map((item) => {
+          {filteredItems.map((item) => {
             const image = getImage(item.imageId);
             return (
               <Card key={item.id} className="overflow-hidden group hover:shadow-xl transition-shadow duration-300">
@@ -95,6 +113,9 @@ export default function Home() {
             );
           })}
         </div>
+        {filteredItems.length === 0 && (
+            <p className="text-center text-muted-foreground mt-8">No items found in this category.</p>
+        )}
       </section>
     </div>
   );
