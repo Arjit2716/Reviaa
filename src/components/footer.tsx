@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles, Twitter, Instagram, Facebook } from "lucide-react";
+import { Shirt, Twitter, Instagram, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -7,9 +7,9 @@ export function Footer() {
       <div className="container mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
-            <Sparkles className="h-6 w-6 text-primary" />
+            <Shirt className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold font-headline text-primary">
-              StyleSwap
+              Reviaa
             </span>
           </div>
           <nav className="flex flex-wrap justify-center gap-4 md:gap-6">
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} StyleSwap. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Reviaa. All rights reserved.</p>
         </div>
       </div>
     </footer>

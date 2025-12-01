@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { MapPin, Sparkles, Shirt } from "lucide-react";
+import { MapPin, Shirt } from "lucide-react";
 
 export function Header() {
   return (
@@ -11,9 +11,9 @@ export function Header() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-8">
           <Link href="/" className="flex items-center gap-2">
-            <Sparkles className="h-7 w-7 text-primary" />
+            <Shirt className="h-7 w-7 text-primary" />
             <span className="text-2xl font-bold font-headline text-primary tracking-tighter">
-              StyleSwap
+              Reviaa
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">

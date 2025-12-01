@@ -16,7 +16,7 @@ export default function Home() {
     <div className="space-y-12">
       <section className="text-center">
         <h1 className="text-4xl md:text-5xl font-headline font-bold text-primary tracking-tight">
-          StyleSwap
+          Reviaa
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           Discover unique fashion and rent the perfect outfit for any occasion. Your closet is now endless.

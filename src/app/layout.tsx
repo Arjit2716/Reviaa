@@ -6,7 +6,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'StyleSwap',
+  title: 'Reviaa',
   description: 'Rent and share your style with the community.',
   icons: {
     icon: '/favicon.ico',

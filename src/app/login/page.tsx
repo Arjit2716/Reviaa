@@ -39,7 +39,7 @@ export default function LoginPage() {
     if (otp === "123456") { // Mock OTP
       toast({
         title: "Login Successful",
-        description: "Welcome back to StyleSwap!",
+        description: "Welcome back to Reviaa!",
       });
       router.push("/");
     } else {
@@ -56,7 +56,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader>
           <CardTitle className="font-headline text-2xl text-center text-primary">
-            {step === 1 ? "Welcome to StyleSwap" : "Verify Your Number"}
+            {step === 1 ? "Welcome to Reviaa" : "Verify Your Number"}
           </CardTitle>
           <CardDescription className="text-center">
             {step === 1 ? "Enter your mobile number to login or sign up." : `Enter the OTP sent to ${mobileNumber}`}

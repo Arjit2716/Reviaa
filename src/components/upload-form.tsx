@@ -102,7 +102,7 @@ export function UploadForm() {
     console.log(values);
     toast({
       title: "Item Submitted!",
-      description: "Your item has been successfully listed on StyleSwap.",
+      description: "Your item has been successfully listed on Reviaa.",
     });
     // Here you would typically send the data to your backend.
   }
