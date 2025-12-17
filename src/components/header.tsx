@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Shirt, Menu, Home, Upload, FileText } from "lucide-react";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 export function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -63,7 +64,10 @@ export function Header() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-64">
+            <SheetContent side="left" className="w-64 p-0">
+              <VisuallyHidden>
+                <SheetTitle>Mobile Navigation Menu</SheetTitle>
+              </VisuallyHidden>
               <div className="flex flex-col h-full">
                 <div className="p-4 border-b">
                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsSheetOpen(false)}>
