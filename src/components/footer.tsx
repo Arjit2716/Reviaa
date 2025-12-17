@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Shirt, Twitter, Instagram, Facebook } from "lucide-react";
+import { Shirt, Twitter, Instagram, Facebook, Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -25,7 +25,9 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Reviaa. All rights reserved. | Made by Arjit</p>
+          <p className="flex items-center justify-center gap-1">
+            Made with <Heart className="w-4 h-4 text-red-500 fill-current" /> by Arjit
+          </p>
         </div>
       </div>
     </footer>
